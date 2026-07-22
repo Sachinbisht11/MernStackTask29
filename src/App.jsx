@@ -4,9 +4,6 @@ import Card from "./Card";
 import { useEffect } from "react";
 function App() {
   const {data, loading, error } = useFetch("https://mocki.io/v1/41cdad0f-582f-47a9-993c-60bc9da7c7f6");
-  useEffect(()=>{
-    console.log(data, loading, error,"data, loading, error")
-  },[loading,data,error])
   if (loading) {
     return <h2>Loading...</h2>;
   }
