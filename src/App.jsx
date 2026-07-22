@@ -1,9 +1,12 @@
 import useFetch from "./hooks/useFetch";
 import "./App.css";
+import Card from "./Card";
+import { useEffect } from "react";
 function App() {
-  const { data, loading, error } = useFetch(
-    "https://mocki.io/v1/41cdad0f-582f-47a9-993c-60bc9da7c7f6"
-  );
+  const {data, loading, error } = useFetch("https://mocki.io/v1/41cdad0f-582f-47a9-993c-60bc9da7c7f6");
+  useEffect(()=>{
+    console.log(data, loading, error,"data, loading, error")
+  },[loading,data,error])
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -13,13 +16,8 @@ function App() {
   return (
     <div className="container">
       <div className="photo">PHOTO</div>
-      <div className="cards">
-        {data.map((user) => (
-          <div className="card">
-            <img src={user.img_src}/>
-            <p>Photo {user.id}</p>
-          </div>
-        ))}
+      <div>
+          <Card props={data}/>
       </div>
     </div>
   );
