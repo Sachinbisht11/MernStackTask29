@@ -1,0 +1,28 @@
+.container{
+    width:100%;
+}
+.cards{
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    border: 1px solid black;
+    justify-items: center;
+}
+.card img{
+    height: 200px;
+    width: 300px;
+}
+.photo{
+    font-size: xx-large;
+    font-weight: bold;
+    height: 100px;
+    text-align: center;
+    align-content: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
